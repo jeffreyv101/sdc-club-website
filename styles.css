@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Main Heading */
+#header {
+    background-color: rgb(23,23,23);
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+#logo h1 {
+    margin: 0;
+    padding: 0.5em;
+    display: inline;
+    vertical-align: middle;
+}
+
+#logo img {
+    vertical-align: middle;
+    width: 7%;
+}
+
+/* Navigation */
+#nav a {
+    padding: 1em;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* Usage of @media */
+@media (min-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+}
+
+/* Main Content */
+#content {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Footer */
+#footer {
+    background-color: rgb(23,23,23);;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    bottom: 0;
+}
+
+#footer p {
+    display: inline;
+    padding: 0.5em;
+}

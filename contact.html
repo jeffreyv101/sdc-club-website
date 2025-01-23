@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Club Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- CSCN 315: Usage of CSS -->
+    <style>
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="images/logo.png" alt="Software Development Club Logo">
+            <h1>Software Development Club</h1>
+        </div>
+        <br>
+
+        <div id="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Current Projects</a>
+            <a href="contact.html " target="_blank">Contact</a>
+        </div>
+        
+    </div>
+
+    <div id="content">
+        <h1>Contact Us</h1>
+        <p>We strongly encourage and foster external partnerships as a club whether that be through conducting interactive workshops or industry-like projects!</p>
+        
+        <h2>Interested in Partnering?</h2>
+        
+        <!-- CSCN 315: Usage of Inline CSS Styling -->
+        <p>For more information, please contact our officer of external relations: 
+            <a style="text-decoration: none; color:#404040" href="mailto:jlvandever@liberty.edu">Jeffrey Vandever</a></p>
+
+        <h2>General Inquiries</h2>
+        <p>For general inquiries, please use this form below:</p>
+
+        <div>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    </div>
+
+
+    <div id="footer">
+        <p>&copy; 2025 Software Development Club</p>
+        <p>Liberty University</p>
+    </div>
+</body>
+</html>
