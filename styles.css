@@ -26,7 +26,7 @@ header {
 }
 
 /* Navigation */
-#nav a {
+nav a {
     padding: 1em;
     color: #fff;
     text-decoration: none;
