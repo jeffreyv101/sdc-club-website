@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="header">
+    <header>
         <div id="logo">
             <img src="images/logo.png" alt="Software Development Club Logo">
             <h1>Software Development Club</h1>
@@ -20,8 +20,7 @@
             <a href="projects.html">Current Projects</a>
             <a href="contact.html " target="_blank">Contact</a>
         </div>
-        
-    </div>
+    </header>
 
     <div id="content">
 
@@ -31,23 +30,39 @@
             The Software Development Club is a space for Software Engineers and others to learn, collaborate, and deploy meaningful software projects in an industry-like environment.
         </p>
     
+        <h3>Join Us</h3>
+        <p>
+            We meet every Tuesday at 5:30 PM in SoBusi 2810. All are welcome! 
+        </p>
+
         <h3>Upcoming Events</h3>
+        <p>Special Meetings:</p>
         <ul>
-            <li>Introduction to Web Development - March 15th</li>
-            <li>Building Mobile Apps with React Native - March 22nd</li>
-            <li>Creating APIs with Node.js and Express - March 29th</li>
+            <li>Club Kickoff: 1/28/25</li>
+            <li>Club wide guest lecture: 3/4/25</li>
+            <li>Club wide activity: 4/22/25</li>
+        </ul>
+        <p>Upcoming Workshops:</p>
+        <ul>
+            <li>Python Desktop App (2/4, 2/11, 2/18, 2/25)</li>
+            <li>React & C# .NET (3/25, 4/1, 4/8, 4/15)</li>
         </ul>
 
         <br>
-        <p>If you are here to grade for CSCN 315, please <a href="https://github.com/jeffreyv101/sdc-club-website/blob/main/CSCN315GRADING.md" target="_blank">click here</a> for a comprehensive overview of how this submission meets assignment requirements.</p>
+        <p>If you are here to grade for CSCN 315, please <a id="documentation" href="https://github.com/jeffreyv101/sdc-club-website/blob/main/CSCN315GRADING.md" target="_blank">click here</a> for a comprehensive overview of how this submission meets assignment requirements.</p>
     </div>
 
+    <!-- Use of JS styling -->
+    <script>
+        // JavaScript to change the color of the link when hovered over
+        document.getElementById('documentation').style.color = "black";
+    </script>
 
 
 
-    <div id="footer">
+    <footer>
         <p>&copy; 2025 Software Development Club</p>
         <p>Liberty University</p>
-    </div>
+    </footer>
 </body>
 </html>

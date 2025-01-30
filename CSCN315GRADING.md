@@ -1,8 +1,24 @@
 # CSCN 315 Semester Project Explanation
+## Individual Case Project 1
+(WAITING FOR GRADING)
+1. Four pages with a common layout and navigation system to all pages:
+    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
+    - [about.html](https://jeffreyv101.github.io/sdc-club-website/about.html)
+    - [projects.html](https://jeffreyv101.github.io/sdc-club-website/projects.html)
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-## CSS Styles
-1. Inline and embedded CSS styles: please see [contact.html](contact.html) which includes both.
+2. Use of a variable
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-2. External CSS style sheet with 1 Class and 1 ID applied to at least 2 elements within my page: please see [styles.css](styles.css) and [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html).  Original HTML page associated with assignment 1 (HTML Page) can be found at [projects.html](https://jeffreyv101.github.io/sdc-club-website/projects.html) or [html-page.html](https://jeffreyv101.github.io/sdc-club-website/html-page.html) which also showcases CSS usage.
+3. Use of getElementById() method
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-3. Responsive Design: please see [styles.css](styles.css) and [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html).
+4. Use of an event such as an alert window
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
+
+5. Use of JS styling
+    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
+
+6. Basic JS commenting explaining your example
+    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
