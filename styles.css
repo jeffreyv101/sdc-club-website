@@ -83,7 +83,8 @@ nav a {
 }
 
 #contact-form input[type="text"],
-input[type="email"],
+input[type="email"], 
+input[type="number"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -108,6 +109,31 @@ textarea {
     background-color: #45a049;
 }
 
+/* For Project 2 */
+#results {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+}
+
+#results img {
+    width: 10%;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+}
+@media (max-width: 600px) {
+    #results img {
+        width: 20%;
+    }
+}
+
+#results p {
+    margin: 10px;
+}
+
+#results h3 {
+    margin: 10px;
+}
 
 /* Footer */
 footer {

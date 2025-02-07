@@ -1,24 +1,21 @@
 # CSCN 315 Semester Project Explanation
-## Individual Case Project 1
-(WAITING FOR GRADING)
-1. Four pages with a common layout and navigation system to all pages:
-    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
-    - [about.html](https://jeffreyv101.github.io/sdc-club-website/about.html)
-    - [projects.html](https://jeffreyv101.github.io/sdc-club-website/projects.html)
+## Individual Case Project 2
+1. Create a Form to Gather User Data
     - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-2. Use of a variable
+2. Perform Calculations Based on User Input
     - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-3. Use of getElementById() method
+3. Validate User Input
     - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-4. Use of an event such as an alert window
+4. Display Results Back to User
     - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
 
-5. Use of JS styling
-    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
-
-6. Basic JS commenting explaining your example
-    - [index.html](https://jeffreyv101.github.io/sdc-club-website/index.html)
+5. Log Data to the Console
     - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
+    - [proj2.js](./proj2.js)
+
+6. Event Handling
+    - [contact.html](https://jeffreyv101.github.io/sdc-club-website/contact.html)
+    - [proj2.js](./proj2.js)
