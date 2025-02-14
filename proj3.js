@@ -11,6 +11,10 @@ function addTask()
     {
         alert("Please enter a task label");
     }
+    else if (findTask(taskToAdd) != -1)
+    {
+        alert("Task already exists");
+    }
     else
     {
         let taskID = tasks.length;
@@ -21,6 +25,17 @@ function addTask()
         displayTasks();
         taskToAdd = "";
     }
+}
+
+function findTask(title) 
+{
+    for (let i = 1; i < tasks.length; i += 3) {
+        if (tasks[i][1] == title) {
+            return tasks[i][0];
+        }
+    }
+    return -1;
+
 }
 
 function removeTask(taskID) {
