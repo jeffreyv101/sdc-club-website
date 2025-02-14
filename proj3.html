@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Club About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="Software Development Club Logo">
+            <h1>Software Development Club</h1>
+        </div>
+        <br>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html"><b></b>Current Projects</b></a>
+            <a href="contact.html " target="_blank">Contact</a>
+        </nav>
+        
+    </header>
+
+    <div id="content">
+        <a href="projects.html"> <- Go Back</a>
+
+        <h2>Task Manager</h2>
+        <form id="taskForm" onsubmit="addTask()">
+            <label for="task">Add a task:</label>
+            <input type="text" id="task" name="task" required>
+            <br>
+            <label for="priorityLevel">Priority Level:</label>
+            <select id="priorityLevel" name="priorityLevel">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <br>
+            <input type="submit" value="Add Task">
+        </form>
+        <br>
+        <div id="tasks">
+        </div>
+
+        <script src="proj3.js"></script>
+
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Software Development Club</p>
+        <p>Liberty University</p>
+    </footer>
+</body>
+</html>
