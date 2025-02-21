@@ -109,32 +109,6 @@ textarea {
     background-color: #45a049;
 }
 
-/* For Project 2 */
-#results {
-    background-color: #f9f9f9;
-    border-radius: 20px;
-}
-
-#results img {
-    width: 10%;
-    height: auto;
-    margin: 10px;
-    border-radius: 5px;
-}
-@media (max-width: 600px) {
-    #results img {
-        width: 20%;
-    }
-}
-
-#results p {
-    margin: 10px;
-}
-
-#results h3 {
-    margin: 10px;
-}
-
 /* For Project 3 */
 #tasks {
     background-color: #f9f9f9;
@@ -224,7 +198,6 @@ textarea {
     }
 }
 
-
 #taskDelete button {
     background-color: #f44336;
     color: white;
@@ -238,6 +211,18 @@ textarea {
 #taskDelete button:hover {
     background-color: #db3b30;
 }
+
+/* For Project 5 */
+div#locOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 /* Footer */
 footer {
