@@ -47,7 +47,7 @@ nav a {
 /* Main Content */
 
 .images {
-    width: 50%;
+    width: 30%;
     height: auto;
     border-radius: 5px;
 }
@@ -229,7 +229,7 @@ textarea {
     background-color: #db3b30;
 }
 
-/* For Project 5 */
+/* About Page (Project 5) */
 #overlay {
     position: fixed;
     display: none;
@@ -280,6 +280,17 @@ textarea {
     border-radius: 4px;
 }
 
+#displayOfficers {
+    width: 80%;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (min-width: 700px) {
+    #displayOfficers {
+        width: 20%;
+    }
+}
 
 /* Footer */
 footer {
