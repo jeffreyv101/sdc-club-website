@@ -10,21 +10,24 @@
     <header>
         <div id="logo">
             <img src="images/logo.png" alt="Software Development Club Logo">
-            <h1>Software Development Club</h1>
+            <h1 id="clubName">Software Development Club</h1>
         </div>
+        <script src="header.js"></script>
         <br>
 
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html"><b>About</b></a>
             <a href="projects.html">Current Projects</a>
-            <a href="contact.html " target="_blank">Contact</a>
+            <a href="contact.html ">Contact</a>
         </nav>
         
     </header>
 
     <div id="content">
         <h2>About</h2>
+
+        <img class="images" src="images/stock/coding.jpg" alt="Software Development Club Group Picture">
 
         <h3>Who We Are</h3>
         <p>
@@ -35,46 +38,15 @@
         <p>
             The Software Development Club is a space for Software Engineers and others to learn, collaborate, and deploy meaningful software projects in an industry-like environment.
         </p>
+        
+        <!-- When button is clicked it will start the overlay and display the officer -->
+        <button onclick="startOverlay(); displayOfficer();"><h3>Meet our Officer Team</h3></button>
 
-        <h3>Meet our Officer Team</h3>
-        
-        <div id="locOverlay">
-            <figure>
-                <img src="images/loc.jpg" alt="Loc Nguyen">
-                <figcaption>Loc Nguyen</figcaption>
-                <figcaption>President & Tech Mentor</figcaption>
-            </figure>
-            <div id="locOverlayClose"></div>
-        </div>
-        <div id="kaelynOverlay">
-            <figure>
-                <img src="images/kaelyn.jpg" alt="Kaelyn Haynie">
-                <figcaption>Kaelyn Haynie</figcaption>
-                <figcaption>Vice President</figcaption>
-            </figure>
-            <div id="kaelynOverlayClose"></div>
-        </div>
-        <div id="jackOverlay">
-            <figure>
-                <img src="images/jack.jpg" alt="Jack Harris">
-                <figcaption>Jack Harris</figcaption>
-                <figcaption>Director of Finance & Logistics</figcaption>
-            </figure>
-            <div id="jackOverlayClose"></div>
-        </div>
-        
+        <!-- Overlay that will display the officer team -->
+        <div id="overlay"></div>
+
         <script src="proj5.js"></script>
-
-        <ul>
-            <li>President & Tech Mentor: Loc "Lop" Nguyen</li>
-            <li>Vice President: Kaelyn Haynie</li>
-            <li>Director of Finance & Logistics: Jack Harris</li>
-            <li>Director of Innovation & Growth: Cameron Kauffman</li>
-            <li>Director of Teams & Technology: Jonathan Sulgrove</li>
-            <li>Director of External Relations and Opportunities: Jeffrey Vandever</li>
-        </ul>
     </div>
-
 
     <footer>
         <p>&copy; 2025 Software Development Club</p>
