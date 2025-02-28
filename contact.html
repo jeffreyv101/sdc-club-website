@@ -25,41 +25,71 @@
     </header>
 
     <div id="content">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
 
         <img class="images" src="images/stock/planning.jpg" alt="Software Development Club Group Picture">
 
         <div id="contact">
             <p>We strongly encourage and foster external partnerships as a club whether that be through conducting interactive workshops or industry-like projects!</p>
             
-            <h2>Interested in Partnering?</h2>
+            <h3>Interested in Partnering?</h3>
             
             <!-- CSCN 315: Usage of Inline CSS Styling -->
             <p>For more information, please contact our officer of external relations: 
                 <a id="contact-email" href="mailto:jlvandever@liberty.edu">Jeffrey Vandever</a></p>
 
-            <h2>General Inquiries</h2>
+            <h3>General Inquiries</h3>
             <div id="results"></div>
 
-            <p>For general inquiries, please use this form below:</p>
+            <p>For general inquiries or project information, please create an account below:</p>
 
-            <div id="contact-form">
-                <form onsubmit="displayResults()">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+            <div id="contact-form-container">
+                <div id="overlay"></div>
+                <form onsubmit="createAccount(event)" id="contactform">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name">
                     <br>
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" required>
+
+                    <p><i>Please enter a username between 6 and 15 characters long, consisting solely of letters and numbers. The username cannot start with a number.</i></p>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
                     <br>
+
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email">
                     <br>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
+
+                    <p><i>Please enter a password between 8 and 20 characters long containing at least one uppercase letter, one lowercase letter, one number, and one special character.</i></p>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
                     <br>
-                    <input type="submit" value="Submit">
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <br>
+
+                    <p><i>Please enter a phone number in the format: (xxx) xxx-xxxx or xxx-xxx-xxxx or xxxxxxxxxx</i></p>
+                    <label for="phone">Phone Number:</label>
+                    <input type="input" id="phone" name="phone">
+                    <br>
+
+                    <p><i>Note: You must be 18 years or older to create an account.</i></p>
+                    <label for="date-of-birth">Date of Birth:</label>
+                    <input type="date" id="date-of-birth" name="date-of-birth">
+                    <br>
+
+                    <p><i>By checking the box below, you agree to the terms and conditions of the Software Development Club.</i></p>
+                    <label for="confirm-agreement">Agree to terms of use</label>
+                    <input type="checkbox" id="confirm-agreement" name ="confirm-agreement" value="agree">
+                    <br> <br>
+
+                    <button id="agreement" onclick="showAgreement()">Show Terms and Conditions</button>
+                    <input type="submit" name="submit" value="Create Account">
                 </form>
             </div>
+
+            <script src="proj6.js"></script>
+
         </div>
     </div>
 

@@ -31,7 +31,7 @@ header {
     width: 7%;
 }
 
-@media (max-width: 520px) {
+@media (max-width: 551px) {
     #logo img {
         width: 15%;
     }
@@ -45,11 +45,17 @@ nav a {
 }
 
 /* Main Content */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
 
 .images {
     width: 30%;
     height: auto;
     border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
 @media (max-width: 700px) {
@@ -84,13 +90,19 @@ nav a {
     }
 }
 
-/* Contact + Form */
+/* Contact page */
 #contact-email {
-    text-decoration: none; 
-    color:#404040;
+    color: #3d0f0f;
+    text-decoration: none;
+}
+/* Contact Form (for project 6) */
+#contact-form-container {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
 }
 
-#contact-form form {
+#contact-form {
     margin-top: 20px;
 }
 
@@ -102,6 +114,9 @@ nav a {
 #contact-form input[type="text"],
 input[type="email"], 
 input[type="number"],
+input[type="password"],
+input[type="input"],
+input[type="date"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -112,7 +127,29 @@ textarea {
     box-sizing: border-box;
 }
 
-#contact-form input[type="submit"] {
+#contact-form input[type="checkbox"]
+{
+    width: 5%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#agreement {
+    background-color: #f43b3b;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contactform input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -122,7 +159,7 @@ textarea {
     cursor: pointer;
 }
 
-#contact-form input[type="submit"]:hover {
+#contactform input[type="submit"]:hover {
     background-color: #45a049;
 }
 
