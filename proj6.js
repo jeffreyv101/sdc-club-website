@@ -22,14 +22,15 @@ function createAccount() {
         // -- Validate Username -- \\
         console.log(form.elements["username"].value);
         // Length validation
-        if (form.elements["username"] < 6)
+
+        if (form.elements["username"].value.length < 6)
             throw "Username is too short!";
-        else if (form.elements["username"] > 15)
+        else if (form.elements["username"].value.length > 15)
             throw "Username is too long!";
 
         // Validate that the username starts with a letter
-        if (!/^[a-z]+$/i.test(form.elements["username"][0]))
-            throw "Username cannot start with a letter!"
+        if (!/^[a-z]/i.test(form.elements["username"].value))
+            throw "Username must start with a letter!"
         
         // Using RegEx test if the username contains only alphanumeric characters
         let alphanumeric = /^[a-z0-9 ]+$/i;
@@ -38,17 +39,20 @@ function createAccount() {
 
         // -- Validate Email -- \\
         console.log(form.elements["email"].value);
+
+        if (form.elements["email"].value == "")
+            throw "Email cannot be empty!";
+
         // Using RegEx test if the email is in the correct format
         let email = /\S+@\S+\.\S+/;
         if (!email.test(form.elements["email"].value))
             throw "Email is not in the correct format!";
 
         // -- Validate Password -- \\
-        console.log(form.elements["password"].value);
         // Length validation
-        if (form.elements["password"] < 8)
+        if (form.elements["password"].value.length < 8)
             throw "Password is too short!";
-        else if (form.elements["password"] > 20)
+        else if (form.elements["password"].value.length > 20)
             throw "Password is too long!";
 
         // Contains one uppercase letter
@@ -66,16 +70,15 @@ function createAccount() {
             throw "Password needs a special character!";
 
         // -- Validate Password and Confirm Password -- \\
-        console.log(form.elements["confirm-password"].value);
         if (form.elements["password"].value != form.elements["confirm-password"].value)
             throw "Passwords do not match";
         
         // -- Validate Phone Number -- \\
         console.log(form.elements["phone"].value);
         // Length validation
-        if (form.elements["phone"] < 10)
+        if (form.elements["phone"].value.length < 10)
             throw "Phone number is too short!";
-        else if (form.elements["phone"] > 15)
+        else if (form.elements["phone"].value.length > 15)
             throw "Phone number is too long!";
 
         // Using RegEx test if the phone number contains only numbers
@@ -85,7 +88,7 @@ function createAccount() {
 
         // -- Validate Date of Birth -- \\
         console.log(form.elements["date-of-birth"].value);
-        if (form.elements["date-of-birth"] == "")
+        if (form.elements["date-of-birth"].value == "")
             throw "Date of Birth cannot be empty!";
 
         // Age validation
@@ -99,7 +102,7 @@ function createAccount() {
         
         // -- Ensure Terms are agreed to -- \\
         console.log(form.elements["confirm-agreement"].value);
-        if (form.elements["confirm-agreement"].value == false)
+        if (form.elements["confirm-agreement"].value == 'off')
             throw "You must agree to the terms and conditions!";
     }
     catch (err)
