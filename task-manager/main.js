@@ -1,32 +1,18 @@
-// Modification since project 3: Addition of Due date and Status
+// Modification since project 7: Creating and utilizing a Task Object
 
 /*
     Array format for tasks:
 
     tasks = [
-        prioritylevel,
-        [taskID, taskLabel],
-        image,
-        status,
-        dueDate,
-        deleteButton
+        Task {id, label, priority, image, dueDate, status, deleteButton}
     ]
 
     Example:
     tasks = [
-        "high",
-        [0, "Task 1"],
-        <img src="image.png" alt="Task Image" width="30px" height="30px">,
-        "2023-10-01",
-        "incomplete",
-        "<button onclick='removeTask(0)'>Delete</button>",
+        Task {0, "Task 1", "high", "image.png", "2025-10-01", "incomplete", "<button onclick='removeTask(0)'>Delete</button>"},
 
-        "medium",
-        [1, "Task 2"],
-        <img src="image.png" alt="Task Image" width="30px" height="30px">,
-        "2023-10-02",
-        "incomplete",
-        "<button onclick='removeTask(1)'>Delete</button>"
+        Task {1, "Task 2", "medium", "image.png", "2025-10-02", "incomplete", "<button onclick='removeTask(1)'>Delete</button>"}
+        }
     ]
 */
 let tasks = [];
@@ -50,16 +36,9 @@ function addTask()
     if (imageInput.files && imageInput.files[0]) {
         image = URL.createObjectURL(imageInput.files[0]);
     }
-    
-    // If the image is not empty, set the image
-    if (image != "") {
-        image = "<img src='" + image + "' alt='Task Image' class='taskImage'>";
-    }
-    else {
-        image = "<img src='images/misc/default-task.jpg' alt='Task Image' class='taskImage' width='15%' height='15%'>";
-    }
 
     const taskRegex = /^[^<>]*$/;
+    
     // If the task contains < or > display an error message
     // This is so that the user cannot inject HTML or JavaScript into the task form
     if (!taskRegex.test(taskToAdd)) {
@@ -79,20 +58,15 @@ function addTask()
     else
     {
         const taskID = tasks.length;
-        tasks.push(priorityLevel);
-        tasks.push([taskID, taskToAdd]);
-        tasks.push(image);
-        tasks.push(status);
-        tasks.push(dueDate);
-        tasks.push("<button onclick='removeTask(" + (taskID) + ")'>Delete</button>");
+
+        const newTask = new Task(taskID, taskToAdd, priorityLevel, image, dueDate, status);
+        tasks.push(newTask);
 
         // Reset the form
         form.reset();
 
         // Change the status of the task
         form.elements["status"].value = "not-started";
-        
-        
 
         // Display results
         displayTasks();
@@ -102,9 +76,9 @@ function addTask()
 // Finds the task in the list and returns an index if it does
 function findTask(title) 
 {
-    for (let i = 1; i < tasks.length; i += 6) {
-        if (tasks[i][1] == title) {
-            return tasks[i][0];
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].label == title) {
+            return tasks[i];
         }
     }
     return -1;
@@ -113,9 +87,9 @@ function findTask(title)
 
 // Removes the task from the list
 function removeTask(taskID) {
-    for (let i = 1; i < tasks.length; i += 6) {
-        if (tasks[i][0] == taskID) {
-            tasks.splice(i - 1, 6);
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id == taskID) {
+            tasks.splice(i, 1);
             break;
         }
     }
@@ -137,13 +111,13 @@ function displayTasks() {
         taskDiv.innerHTML += "<h2>Tasks</h2>";
 
         // Display the tasks as they are set up in the array
-        for (let i = 0; i < tasks.length; i += 6) {
+        for (let i = 0; i < tasks.length; i++) {
             const newTask = document.createElement("div");
             newTask.className = "task";
             taskDiv.appendChild(newTask);
 
             // Display the task image
-            newTask.innerHTML += tasks[i + 2];
+            newTask.innerHTML += tasks[i].image;
             
             // Create the task info div
             const taskInfo = document.createElement("div");
@@ -151,23 +125,23 @@ function displayTasks() {
             newTask.appendChild(taskInfo);
 
             // Display the task label and the delete button
-            switch (tasks[i]) {
+            switch (tasks[i].label) {
                 case "low":
-                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: green'>" + tasks[i+1][1] + "</b></p>";
+                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: green'>" + tasks[i].label + "</b></p>";
                     break;
                 case "medium":
-                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: orange'>" + tasks[i+1][1] + "</b></p>";
+                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: orange'>" + tasks[i].label + "</b></p>";
                     break;
                 case "high":
-                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: red'>" + tasks[i+1][1] + "</b></p>";
+                    taskInfo.innerHTML += "<p class='taskLabel'><b style='color: red'>" + tasks[i].label + "</b></p>";
                     break;
                 default:
-                    taskInfo.innerHTML += "<p class='taskLabel'><b>" + tasks[i+1][1] + "</b></p>";
+                    taskInfo.innerHTML += "<p class='taskLabel'><b>" + tasks[i].label + "</b></p>";
                     break;
             }
             
             // Display the status
-            if (tasks[i+3] == "in-progress") {
+            if (tasks[i].status == "in-progress") {
                 taskInfo.innerHTML += "<p class='taskStatus'><b style='color: blue'>In Progress</b></p>";
             }
             else {
@@ -177,7 +151,7 @@ function displayTasks() {
             // Convert the due date to a Date object
             // Calculate the number of days until the due date
             // Display the number of days until the due date
-            const dateString = tasks[i+4];
+            const dateString = tasks[i].dueDate;
 
             if (dateString != "") {
                 const dateParts = dateString.split("-");
@@ -221,7 +195,7 @@ function displayTasks() {
             }
 
             // Display the delete button
-            newTask.innerHTML += "<p class='taskDelete'>" + tasks[i + 5] + "</p>";
+            newTask.innerHTML += tasks[i].deleteButton;
             
         }
     }
