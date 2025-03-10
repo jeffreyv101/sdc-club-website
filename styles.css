@@ -210,6 +210,16 @@ textarea {
     box-sizing: border-box;
 }
 
+#taskForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 #taskForm input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -224,35 +234,112 @@ textarea {
     background-color: #45a049;
 }
 
+/* 
+    Task Info Div is the container for the task label, priority level, due date, and status
+    Next to it is the delete button
+*/
+#taskDiv {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
 /* Task Labels and Task Delete CSS */
 @media (max-width: 850px) {
-    #taskLabel, #taskDelete {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        font-size: calc(16px + 0.4vw);
-    }
-    #tasDelete {
+    .task {
+        display: block;
         margin-bottom: 10px;
     }
-}
-@media (min-width: 850px) {
-    #taskLabel {
-        display: inline-block;
-        padding: 0.5em;
-        width: 70%;
-        font-size: calc(16px + 0.4vw);
+
+    .taskImage {
+        display: block;
+        height: 300px;
+        width: 300px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10px;
+        border-radius: 20px;
+        text-align: center;
     }
-    #taskDelete {
-        display: inline-block;
-        padding: 0.5em;
-        width: 25%;
-        text-align: right;
+
+    .taskInfo {
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+    .taskLabel {
+        font-size: calc(20px + 0.4vw);
+    }
+    .taskStatus, .taskDueDate {
+        font-size: calc(12px + 0.4vw);
+    }
+
+    .taskLabel, .taskStatus, .taskDueDate {
+        display: block;
+        padding: 0.1em;
+        text-align: center;
+    }
+
+    .taskDelete {
+        margin-bottom: 10px;
+        text-align: center;
     }
 }
 
-#taskDelete button {
+/* 
+    If the screen becomes big enough, display content like this:
+
+                    Task Label
+    [IMAGE]         Task Status                                  Delete Button
+                    Task Due Date
+
+*/
+@media (min-width: 850px) {
+    .task {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+    }
+
+    .taskImage {
+        height: 120px;
+        width: auto; 
+        margin-right: 10px;
+        border-radius: 20px;
+    }
+
+    .taskInfo {
+        margin-top: 10px;
+        padding: 10px;
+        display: inline-block;
+        flex-grow: 1;
+    }
+
+    .taskDelete {
+        display: inline-block;
+        text-align: right;
+    }
+
+    .taskLabel, .taskStatus, .taskDueDate {
+        text-align: left;
+    }
+
+    .taskLabel {
+        font-size: calc(14px + 0.4vw);
+    }
+    .taskStatus {
+        font-size: calc(13px + 0.4vw);
+    }
+    .taskDueDate {
+        font-size: calc(12px + 0.4vw);
+    }
+}
+
+.taskDelete button {
     background-color: #f44336;
     color: white;
     padding: 14px 20px;
@@ -262,7 +349,7 @@ textarea {
     cursor: pointer;
 }
 
-#taskDelete button:hover {
+.taskDelete button:hover {
     background-color: #db3b30;
 }
 

@@ -34,31 +34,41 @@
             <label for="task">Add a task:</label>
             <input type="text" id="task" name="task" required>
             <br>
+            
             <label for="priorityLevel">Priority Level:</label>
             <select id="priorityLevel" name="priorityLevel">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
             </select>
+            
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate">
+            
+            <label for="status">In Progress:</label>
+            <input type="checkbox" id="status" name="status" value="not-started" onchange="this.value = this.checked ? 'in-progress' : 'not-started'">
+            <br><br>
+            
+            <label for="images">Upload Image:</label>
+            <input type="file" id="images" name="images">
             <br>
             <input type="submit" value="Add Task">
         </form>
         <br>
 
         <!-- Task list -->
-        <div id="tasks">
+        <div id="taskDiv">
             <p>No tasks to display</p>
         </div>
 
         <!-- JS Import -->
-        <script src="proj3.js"></script>
+        <script src="proj7.js"></script>
 
     </div>
 
 
     <footer>
-        <p>&copy; 2025 Software Development Club</p>
-        <p>Liberty University</p>
+        <p>&copy; 2025 Software Development Club - Liberty University</p>
     </footer>
 </body>
 </html>
