@@ -1,4 +1,16 @@
 class Task{
+    // Regular Constructor (id and label cannot be empty):
+    constructor(id, label) {
+        this._id = id;
+        this._label = label;
+        this._priority = "low";
+        this._image = "<img src='images/misc/default-task.jpg' alt='Task Image' class='taskImage' width='15%' height='15%'>";
+        this._dueDate = "";
+        this._status = "not-started";
+        this._deleteButton = "<div class='taskDelete'><button class='taskDelete' onclick='removeTask(" + id + ")'>Delete</button></div>";
+    }
+
+    // Overloaded Constructor:
     constructor(id, label, priority, image, dueDate, status){
         this._id = id;
         this._label = label;
