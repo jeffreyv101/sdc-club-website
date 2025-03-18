@@ -20,7 +20,31 @@
             <a href="about.html">About</a>
             <a id="projectTitle" href="projects.html">Current Projects</a>
             <a href="contact.html ">Contact</a>
+            <!-- Settings icon by Icons8 -->
+            <a id="settings-icon" href="javascript:void(0);" onclick="showSettingsDialog()"><img src="images/misc/settings.jpg"></a>
+
+            <div id="settingsDialog" style="display:none;">
+                <h3>Site Settings</h3>
+                <form>
+                    <label for="bg-color">Background Color</label>
+                    <input type="color" id="bg-color" value="#f4f4f4">
+
+                    <label for="text-color">Text Color</label>
+                    <input type="color" id="text-color" value="#0000">
+
+                    <br>
+                    <label for="font-size-offset">Text Size</label>
+                    <input type="range" id="font-size-offset" value="50">
+                    
+                </form>
+
+
+                <button onclick="hideSettingsDialog()">Close</button>
+            </div>
         </nav>
+
+        <!-- Project 9 JS file include (JS to adjust all colors are in here - move this out of this file if this feature is retained): -->
+        <script src="proj9.js"></script>
     </header>
 
     <div id="content">
@@ -40,24 +64,16 @@
         <p>Special Meetings:</p>
         <ul>
             <li>Club Kickoff: 1/28/25</li>
-            <li>Club wide guest lecture: 3/4/25</li>
             <li>Club wide activity: 4/22/25</li>
         </ul>
         <p>Upcoming Workshops:</p>
         <ul>
             <li>Python Desktop App (2/4, 2/11, 2/18, 2/25)</li>
-            <li>React & C# .NET (3/25, 4/1, 4/8, 4/15)</li>
+            <li>HTTP Server using C# (3/25, 4/1, 4/8, 4/15)</li>
         </ul>
 
         <br>
     </div>
-
-    <!-- Use of JS styling -->
-    <script>
-        // JavaScript to change the color of the link when hovered over
-        document.getElementById('documentation').style.color = "black";
-    </script>
-
 
 
     <footer>

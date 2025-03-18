@@ -39,9 +39,19 @@ header {
 
 /* Navigation */
 nav a {
+    margin-bottom: 10px;
     padding: 1em;
     color: #fff;
     text-decoration: none;
+    padding-bottom: 0.5em;
+}
+
+nav img {
+    margin-bottom: -4px;
+    width: 20px;
+    height: auto;
+
+    margin-left: 2%;
 }
 
 /* Main Content */
@@ -73,6 +83,7 @@ h2 {
 
 /* Projects */
 .projects {
+    text-align: center;
     margin: 20px;
     padding: 20px;
     background-color: #f9f9f9;
