@@ -20,6 +20,28 @@
             <a href="about.html">About</a>
             <a id="projectTitle" href="projects.html">Current Projects</a>
             <a href="contact.html "><b>Contact</b></a>
+
+            <!-- Settings image icon by Icons8 -->
+            <a id="settings-icon" href="javascript:void(0);" onclick="showSettingsDialog()"><img src="images/misc/settings.jpg"></a>
+
+            <div id="settingsDialog" style="display:none;">
+                <h3>Site Settings</h3>
+                <form>
+                    <label for="bg-color">Background Color</label>
+                    <input type="color" id="bg-color" value="#f4f4f4">
+
+                    <label for="text-color">Text Color</label>
+                    <input type="color" id="text-color" value="#0000">
+
+                    <br>
+                    <label for="font-size-offset">Text Size</label>
+                    <input type="range" id="font-size-offset" value="50">
+                    
+                </form>
+
+
+                <button onclick="hideSettingsDialog()">Close</button>
+            </div>
         </nav>
         
     </header>
@@ -47,7 +69,7 @@
                 <div id="overlay"></div>
 
                 <!-- Account Creation Form -->
-                <form onsubmit="createAccount(event)" id="contactform">
+                <form onsubmit="createAccount(event)" id="contactform" style="color: #030303;">
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name">
                     <br>
@@ -97,6 +119,8 @@
         </div>
     </div>
 
+    <!-- Project 9 JS file include (JS to adjust all colors are in here - move this out of this file if this feature is retained): -->
+    <script src="proj9.js"></script>
 
     <footer>
         <p>&copy; 2025 Software Development Club - Liberty University</p>
