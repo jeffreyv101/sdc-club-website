@@ -1,8 +1,9 @@
 // Project 9: Settings dialog functionality
 // Get the elements for background color, text color, and font size offset
-const backgroundColor = document.getElementById('bg-color');
-const textColor = document.getElementById('text-color');
-const fontSizeOffset = document.getElementById('font-size-offset');
+const settingsForm = document.getElementById('preferences-form');
+const backgroundColor = settingsForm.elements['bg-color'];
+const textColor = settingsForm.elements['text-color'];
+const fontSizeOffset = settingsForm.elements['font-size-offset'];
 
 // Get the cookie with the given name
 function getCookie(cname) {
@@ -35,6 +36,8 @@ function showSettingsDialog() {
 
     settingsDialog.style.display = 'block';
     settingsIcon.onclick = hideSettingsDialog;
+
+    showCurrentSettings(backgroundColor.value, textColor.value, fontSizeOffset.value);
 }
 
 // Hide the settings dialog
@@ -44,6 +47,20 @@ function hideSettingsDialog() {
     document.getElementById('settingsDialog').style.display='none';
     settingsIcon.onclick = showSettingsDialog;
 }
+
+// Display current preferences to user
+function showCurrentSettings(bg, text, size) {
+    const output = document.getElementById('current-settings');
+    if (output) {
+        output.innerHTML = `
+            <strong>Current Settings:</strong><br>
+            Background Color: ${bg}<br>
+            Text Color: ${text}<br>
+            Font Size: ${size}px
+        `;
+    }
+}
+
 
 // Sets the content foreground color based on the background color
 function setForegroundColor() {
@@ -71,52 +88,54 @@ function setForegroundColor() {
     document.getElementById('content').style.backgroundColor = fgColor;
 }
 
-// Update the background color
-backgroundColor.addEventListener('change', function() {
+// Apply preferences to the page
+function applyPreferences() {
+    event.preventDefault();
+
+    // Set the background color
     document.body.style.backgroundColor = backgroundColor.value;
 
     setCookie('sdcBackgroundColor', backgroundColor.value, 2);
 
     setForegroundColor(backgroundColor.value);
-});
 
-// Update the text color
-textColor.addEventListener('change', function(){
-    console.log(textColor.value);
+    // Set the text color
     if (textColor) {
         document.querySelector('body').style.color = textColor.value;
     }
 
     setCookie('sdcTextColor', textColor.value, 2);
-}); 
-
-// Update the font size offset
-fontSizeOffset.addEventListener('change', function(){
+    
+    // Set the font size
     setCookie('sdcFontSizeOffset', fontSizeOffset.value, 2);
-    let fontSize = parseInt(fontSizeOffset.value / 10);
-    document.querySelector('h2').style.fontSize = `${16 + fontSize}px`;
-    document.querySelector('p').style.fontSize = `${12 + fontSize}px`;
+    document.querySelector('h2').style.fontSize = `${16 + fontSizeOffset.value/10}px`;
+    document.querySelector('p').style.fontSize = `${12 + fontSizeOffset.value/10}px`;
+
+    showCurrentSettings(backgroundColor.value, textColor.value, fontSizeOffset.value);
+}
+
+// Apply the preferences to the page when loaded
+window.addEventListener("DOMContentLoaded", () => {
+    // Set form with previous values
+    if (getCookie('sdcBackgroundColor')) {
+        backgroundColor.value = getCookie('sdcBackgroundColor');
+    }
+
+    if (getCookie('sdcTextColor')) {
+        textColor.value = getCookie('sdcTextColor');
+    }
+
+    if (getCookie('sdcFontSizeOffset')) {
+        console.log(getCookie('sdcFontSizeOffset'));
+        fontSizeOffset.value = getCookie('sdcFontSizeOffset');
+    }
+
+    // Set site with previous values
+    document.body.style.backgroundColor = backgroundColor.value;
+    setForegroundColor();
+
+    document.querySelector('body').style.color = textColor.value;
+    document.querySelector('h2').style.fontSize = `${16 + parseInt(fontSizeOffset.value/10)}px`;
+    document.querySelector('p').style.fontSize = `${12 + parseInt(fontSizeOffset.value/10)}px`;
 });
 
-
-// Set form with previous values
-if (getCookie('sdcBackgroundColor')) {
-    backgroundColor.value = getCookie('sdcBackgroundColor');
-}
-
-if (getCookie('sdcTextColor')) {
-    textColor.value = getCookie('sdcTextColor');
-}
-
-if (getCookie('sdcFontSizeOffset')) {
-    console.log(getCookie('sdcFontSizeOffset'));
-    fontSizeOffset.value = getCookie('sdcFontSizeOffset');
-}
-
-// Set site with previous values
-document.body.style.backgroundColor = backgroundColor.value;
-setForegroundColor();
-
-document.querySelector('body').style.color = textColor.value;
-document.querySelector('h2').style.fontSize = `${16 + parseInt(fontSizeOffset.value/10)}px`;
-document.querySelector('p').style.fontSize = `${12 + parseInt(fontSizeOffset.value/10)}px`;

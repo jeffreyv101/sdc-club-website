@@ -25,19 +25,22 @@
 
             <div id="settingsDialog" style="display:none;">
                 <h3>Site Settings</h3>
-                <form>
+                <form id="preferences-form" method="GET" action="index.html" onsubmit="applyPreferences()">
                     <label for="bg-color">Background Color</label>
-                    <input type="color" id="bg-color" value="#f4f4f4">
-
+                    <input type="color" id="bg-color" name="bg" value="#f4f4f4">
+                
                     <label for="text-color">Text Color</label>
-                    <input type="color" id="text-color" value="#0000">
-
+                    <input type="color" id="text-color" name="text" value="#000000">
+                
+                    <label for="font-size-offset">Font Size</label>
+                    <input type="range" id="font-size-offset" name="size" min="10" max="30" value="16">
+                
                     <br>
-                    <label for="font-size-offset">Text Size</label>
-                    <input type="range" id="font-size-offset" value="50">
-                    
+                    <input type="submit" value="Apply">
                 </form>
 
+                <!-- Output display -->
+                <div id="current-settings" style="margin-top: 1em;"></div>
 
                 <button onclick="hideSettingsDialog()">Close</button>
             </div>
