@@ -80,7 +80,7 @@ function setForegroundColor() {
 
     let fgColor;
     if (bgColor.toLowerCase() === '#ffffff') {
-        fgColor = rgb(235, 235, 235); // If the background color is white, keep it white
+        fgColor = '#EBEBEB'; // If the background color is white, keep it white
     } else {
         fgColor = lightenColor(bgColor, 20); // Lighten the background color by 20%
     }

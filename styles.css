@@ -54,6 +54,15 @@ nav img {
     margin-left: 2%;
 }
 
+/* Settings Dialog: Project 9 */
+#settingsDialog {
+    background-color: #404040;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 /* Main Content */
 h2 {
     text-align: center;
