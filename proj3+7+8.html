@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Development Club About</title>
+    <title>Software Development Club Project 3, 7, and 8</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,6 +20,28 @@
             <a href="about.html">About</a>
             <a id="projectTitle" href="projects.html"><b>Current Projects</b></a>
             <a href="contact.html ">Contact</a>
+
+            <!-- Settings image icon by Icons8 -->
+            <a id="settings-icon" href="javascript:void(0);" onclick="showSettingsDialog()"><img src="images/misc/settings.jpg"></a>
+
+            <div id="settingsDialog" style="display:none;">
+                <h3>Site Settings</h3>
+                <form>
+                    <label for="bg-color">Background Color</label>
+                    <input type="color" id="bg-color" value="#f4f4f4">
+
+                    <label for="text-color">Text Color</label>
+                    <input type="color" id="text-color" value="#0000">
+
+                    <br>
+                    <label for="font-size-offset">Text Size</label>
+                    <input type="range" id="font-size-offset" value="50">
+                    
+                </form>
+
+
+                <button onclick="hideSettingsDialog()">Close</button>
+            </div>
         </nav>
         
     </header>
@@ -67,6 +89,8 @@
 
     </div>
 
+    <!-- Project 9 JS file include (JS to adjust all colors are in here - move this out of this file if this feature is retained): -->
+    <script src="proj9.js"></script>
 
     <footer>
         <p>&copy; 2025 Software Development Club - Liberty University</p>
