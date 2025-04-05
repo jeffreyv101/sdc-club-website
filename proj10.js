@@ -142,7 +142,7 @@ function dropHandler(ev) {
                 document.getElementById('stop-button').innerHTML = "Game Over"; // Change the stop button text
 
                 // Check if it's the best time
-                if (window.timer < bestTime || bestTime === 0) {
+                if (window.timer < bestTime || bestTime === -1) {
                     bestTime = window.timer; // Update the best time
                     localStorage.setItem('bestTime', bestTime); // Save the best time to local storage
                     document.getElementById('scoreboard').innerHTML = `Best Time: ${bestTime} seconds`; // Update the scoreboard
