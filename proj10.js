@@ -36,8 +36,8 @@ function startPuzzle() {
     document.getElementById('start-button').disabled = true; // Disable the start button
     document.getElementById('start-button').onclick = null; // Disable the click event
     document.getElementById('stop-button').disabled = false; // Enable the stop button
-    document.getElementById('stop-button').onclick = stopPuzzle; // Set the click event for the stop button
-    document.getElementById('stop-button').innerHTML = "Stop"; // Change the stop button text
+    document.getElementById('stop-button').onclick = resetPuzzle; // Set the click event for the stop button
+    document.getElementById('stop-button').innerHTML = "Reset Puzzle"; // Change the stop button text
 
     let pieces = []; // Array to hold the pieces of the puzzle
     // Loop to create the pieces of the puzzle
@@ -114,11 +114,11 @@ function dropHandler(ev) {
 
         const draggedParent = draggedElement.parentElement;
 
+        draggedElement.draggable = false; // Disable dragging for correctly placed pieces
+
         // Swap the images
         targetParent.appendChild(draggedElement);
         draggedParent.appendChild(ev.target);
-
-        draggedElement.draggable = false; // Disable dragging for correctly placed pieces
 
         // Check if the puzzle is complete
         const puzzleArea = document.getElementById('puzzle');
@@ -170,16 +170,16 @@ function dropHandler(ev) {
     }
 }
 
-function stopPuzzle() {
+function resetPuzzle() {
     // Reset the game
     const puzzleArea = document.getElementById('puzzle');
     puzzleArea.innerHTML = ""; // Clear the puzzle area
     const imageRefDiv = document.getElementById('image-reference');
     imageRefDiv.innerHTML = ""; // Clear the image reference
     document.getElementById('timer').innerHTML = `Time: 0 seconds`; // Reset the timer display
+    clearInterval(window.timerInterval); // Stop the timer
     window.timer = 0; // Reset the timer
     window.timerInterval = null; // Reset the timer interval
-    document.getElementById('start-button').disabled = false; // Enable the start button
-    document.getElementById('start-button').innerHTML = "Start"; // Reset the start button text
-    document.getElementById('start-button').onclick = startPuzzle; // Reset the click event
+
+    startPuzzle(); // Start a new game
 }
