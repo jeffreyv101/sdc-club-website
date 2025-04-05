@@ -52,7 +52,7 @@ function startPuzzle() {
     const imageRefDiv = document.getElementById('image-reference');
     const imageRef = document.createElement('img'); // Create an image element for the reference
     imageRefDiv.innerHTML = ""; // Clear the previous image reference
-    imageRef.src = `/images/puzzlepieces/${puzzle}`; // Set the image reference to the selected puzzle
+    imageRef.src = `images/puzzlepieces/${puzzle}`; // Set the image reference to the selected puzzle
     imageRef.style.width = "300px"; // Set the width of the image reference
     imageRef.style.height = "300px"; // Set the height of the image reference
     imageRefDiv.appendChild(imageRef); // Append the image reference to the div
@@ -72,7 +72,7 @@ function startPuzzle() {
             
             const image = document.createElement('img'); // Create an image element
             const pieceIndex = (row - 1) * 3 + (col - 1); // Calculate the correct index for the pieces array
-            image.src = `/images/puzzlepieces/${pieces[pieceIndex]}`; // Set the image source to the shuffled piece
+            image.src = `images/puzzlepieces/${pieces[pieceIndex]}`; // Set the image source to the shuffled piece
             image.id = `img-${pieces[pieceIndex]}`; // Set the image ID to match the piece ID
             image.style.width = "100px"; // Set the width of the image
             image.style.height = "100px"; // Set the height of the image
