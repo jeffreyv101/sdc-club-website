@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Club Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="Software Development Club Logo">
+            <h1 id="clubName">Software Development Club</h1>
+        </div>
+        <br>
+
+        <nav>
+            <a href="index.html"><b>Home</b></a>
+            <a href="about.html">About</a>
+            <a id="projectTitle" href="projects.html">Current Projects</a>
+            <a href="contact.html ">Contact</a>
+            <!-- Settings image icon by Icons8 -->
+            <a id="settings-icon" href="javascript:void(0);" onclick="showSettingsDialog()"><img src="images/misc/settings.jpg"></a>
+
+            <div id="settingsDialog" style="display:none;">
+                <h3>Site Settings</h3>
+                <form id="preferences-form" method="GET" action="index.html" onsubmit="applyPreferences()">
+                    <label for="bg-color">Background Color</label>
+                    <input type="color" id="bg-color" name="bg" value="#f4f4f4">
+                
+                    <label for="text-color">Text Color</label>
+                    <input type="color" id="text-color" name="text" value="#000000">
+                
+                    <label for="font-size-offset">Font Size</label>
+                    <input type="range" id="font-size-offset" name="size" min="10" max="30" value="16">
+                
+                    <br>
+                    <input type="submit" value="Apply">
+                </form>
+
+                <!-- Output display -->
+                <div id="current-settings" style="margin-top: 1em;"></div>
+
+                <button onclick="hideSettingsDialog()">Close</button>
+            </div>
+        </nav>
+        <script src="header.js"></script>
+    </header>
+
+    <div id="content">
+        <h2>Project 11: OpenWeather API</h2>
+
+        <div id="weather">
+            <span id="temp"></span>
+            <span id="humidity"></span>
+            <span id="conditions"></span>
+            <span id="sunrise"></span>
+            <span id="sunset"></span>
+        </div>
+    </div>
+
+    <script src="proj11.js"></script>
+
+    <footer>
+        <p>&copy; 2025 Software Development Club - Liberty University</p>
+    </footer>
+</body>
+</html>
