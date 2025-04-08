@@ -1,6 +1,4 @@
 // Project 10: Puzzle Game
-// Note: I tried to add highlighting to the destination area when dragging, but it kept running into a bunch of issues that I couldn't figure out.
-
 // Set up best time from last game
 let bestTime = localStorage.getItem('bestTime') || -1; // Get the best time from local storage or set to -1
 
@@ -80,6 +78,7 @@ function startPuzzle() {
             piece.appendChild(image); // Append the image to the piece
             piece.draggable = true; // Make the piece draggable
             piece.ondragstart = dragstartHandler; // Set the drag start handler
+            piece.ondragleave = dragleaveHandler; // Set the drag leave handler
             piece.ondragover = dragoverHandler; // Set the drag over handler
             piece.ondrop = dropHandler; // Set the drop handler
             
@@ -100,12 +99,17 @@ function startPuzzle() {
 // It sets the ID of the dragged element as the data to be transferred
 function dragstartHandler(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log("dragstartHandler: " + ev.target.id);
 }
 
 // This function is called when the dragged element is over a drop target
 function dragoverHandler(ev) {
     ev.preventDefault();
+    this.style.border = "2px dashed #000"; // Highlight the drop target
+}
+
+function dragleaveHandler(ev) {
+    ev.preventDefault();
+    this.style.border = ""; // Remove the highlight when leaving the drop target
 }
 
 // This function is called when the dragged element is dropped on a valid drop target
@@ -113,6 +117,8 @@ function dropHandler(ev) {
     ev.preventDefault();
     const data = ev.dataTransfer.getData("text");
     const draggedElement = document.getElementById(data);
+
+    this.style.border = ""; // Remove the highlight when leaving the drop target
 
     // Check if the drop target is the correct position
     if (ev.target.parentElement.id === (draggedElement.id.replace('img-', '')) && ev.target.id !== draggedElement.id) {
