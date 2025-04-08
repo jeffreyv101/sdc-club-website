@@ -1,4 +1,5 @@
 // Project 10: Puzzle Game
+// Note: I tried to add highlighting to the destination area when dragging, but it kept running into a bunch of issues that I couldn't figure out.
 
 // Set up best time from last game
 let bestTime = localStorage.getItem('bestTime') || -1; // Get the best time from local storage or set to -1
@@ -94,14 +95,20 @@ function startPuzzle() {
     }, 1000); // Update every second
 }
 
+// This function is called when the dragged element starts to be dragged
+// It sets the data to be transferred during the drag operation
+// It sets the ID of the dragged element as the data to be transferred
 function dragstartHandler(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+    console.log("dragstartHandler: " + ev.target.id);
 }
 
+// This function is called when the dragged element is over a drop target
 function dragoverHandler(ev) {
     ev.preventDefault();
 }
 
+// This function is called when the dragged element is dropped on a valid drop target
 function dropHandler(ev) {
     ev.preventDefault();
     const data = ev.dataTransfer.getData("text");
