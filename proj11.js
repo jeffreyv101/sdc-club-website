@@ -26,8 +26,15 @@ function errorCallback(error) {
     fetchWeatherData();
 } 
 
+/*
+Notes on using fetch vs XMLHttpRequest:
+1. Fetch was easier to implement and its abstraction of what is going on under the hood made it much easier to utilize.
+2. XMLHttpRequest was fairly barebones and required an understanding of how HTTP server works in order to troubleshoot and utilize.
+3. Both accomplish accomplish the same thing from what I can tell and it really depends on how much abstraction the developer is willing to have on the code.
+*/
 async function fetchWeatherData(){
     try{
+        // Using the latitude and longitude retrieved by the user (or just using Liberty University), fetch from the OpenWeatherMap API
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=a8ce3afc4aa3d64978fa7929aaa7fd2a`);
 
         // Check if the response is ok (status code 200)
@@ -49,7 +56,7 @@ async function fetchWeatherData(){
         const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('default', {timeZone: 'America/New_York'});
         const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('default', {timeZone: 'America/New_York'});
 
-        // Update the HTML elements with the weather data
+        // Update the HTML elements with the weather data (also add unique CSS styling)
         if (temp > 80) {
             document.getElementById("temp").style.backgroundColor = "#f26843";
         }
@@ -60,7 +67,7 @@ async function fetchWeatherData(){
             document.getElementById("temp").style.backgroundColor = "#2debeb";
         }
 
-
+        // Show the results to the page
         document.getElementById("temp").innerHTML = temp + '°';
         document.getElementById("humidity").innerHTML = "Humidity: " + humidity + '%';
         document.getElementById("conditions").innerHTML = "Current Conditions: " + conditions;
@@ -71,4 +78,27 @@ async function fetchWeatherData(){
         console.error(error);
         document.getElementById("temp").innerHTML = "Could not retrieve weather data, please try again later...";
     }
+}
+
+// Get a fun fact about cats (using an XMLHttpRequest)
+// Example code used from https://www.w3schools.com/xml/xml_http.asp and https://javascript.info/xmlhttprequest
+function getCatFunFact() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        // If the request was successful
+        if (this.readyState == 4 && this.status == 200) {
+            const data = JSON.parse(xhttp.responseText);
+
+            document.getElementById("cat-fact").innerHTML = data.fact;
+        }
+        else if (this.readyState == 4) {
+            console.error("Cat fact ready state: " + this.readyState);
+            console.error("Cat fact status: " + this.status);
+
+            document.getElementById("cat-fact").innerHTML = "Sorry something went wrong, please try again later...";
+        }
+    };
+
+    xhttp.open("GET", "https://catfact.ninja/fact", true);
+    xhttp.send();
 }
