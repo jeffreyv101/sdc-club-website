@@ -30,7 +30,7 @@ function errorCallback(error) {
 Notes on using fetch vs XMLHttpRequest:
 1. Fetch was easier to implement and its abstraction of what is going on under the hood made it much easier to utilize.
 2. XMLHttpRequest was fairly barebones and required an understanding of how HTTP server works in order to troubleshoot and utilize.
-3. Both accomplish accomplish the same thing from what I can tell and it really depends on how much abstraction the developer is willing to have on the code.
+3. Both accomplish the same thing from what I can tell and it really depends on how much abstraction the developer is willing to have on the code.
 */
 async function fetchWeatherData(){
     try{
