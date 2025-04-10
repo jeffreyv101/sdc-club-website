@@ -569,6 +569,7 @@ textarea {
     margin: 0 auto;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 #cat-fact {
