@@ -31,7 +31,7 @@ $(document).ready(() => {
                 }, 1000);
             });
         }
-        console.log("Mission statement clicked!");
+        
     });
 
     // Checks when the user hovers over the mission statement
