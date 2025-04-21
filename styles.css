@@ -90,6 +90,17 @@ h2 {
     border-radius: 5px;
 }
 
+.center-text {
+    text-align: center;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 /* Projects */
 .projects {
     text-align: center;

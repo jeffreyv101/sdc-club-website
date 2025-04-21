@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software Development Club Home</title>
+    <title>Software Development Club | jQuery</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -15,11 +16,10 @@
         <br>
 
         <nav>
-            <a href="index.html"><b>Home</b></a>
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a id="projectTitle" href="projects.html">Current Projects</a>
-            <a href="contact.html ">Contact</a>
-            <!-- Settings image icon by Icons8 -->
+            <a href="contact.html">Contact</a>
             <a id="settings-icon" href="javascript:void(0);" onclick="showSettingsDialog()"><img src="images/misc/settings.jpg"></a>
 
             <div id="settingsDialog" style="display:none;">
@@ -46,39 +46,31 @@
         </nav>
     </header>
 
-    <div id="content" class="center-text">
-        <h2 class="center-text">Welcome to the Software Development Club</h2>
-        <p>
-            The Software Development Club is a space for Software Engineers and others to learn, collaborate, and deploy meaningful software projects in an industry-like environment.
+    <div id="content">
+        <h2 class="center-text">Welcome to an example of jQuery</h2>
+        <p id="mission" class="center-text">
+            Click here to see our mission statement!
         </p>
     
-        <img class="images" src="images/groupPicture.jpg" alt="Software Development Club Group Picture">
+        <img id="group-pic" class="images" src="images/groupPicture.jpg" alt="Software Development Club Group Picture">
 
-        <h3>Join Us</h3>
+        <h3>Predictive Search Example</h3>
         <p>
-            We meet every Tuesday at 5:30 PM in SoBusi 2810. All are welcome! 
+            Type in the search box below to see a predictive search example using jQuery.
         </p>
-
-        <h3>Upcoming Events</h3>
-        <p>Special Meetings:</p>
-        <ul>
-            <li>Club Kickoff: 1/28/25</li>
-            <li>Club wide activity: 4/22/25</li>
-        </ul>
-        <p>Upcoming Workshops:</p>
-        <ul>
-            <li>Python Desktop App (2/4, 2/11, 2/18, 2/25)</li>
-            <li>HTTP Server using C# (3/25, 4/1, 4/8, 4/15)</li>
-        </ul>
+        <input type="text" id="search" placeholder="Search for something related to building Software...">
+        <div id="search-results"></div>
 
         <br>
     </div>
 
-    <footer class="center-text">
+    <footer>
         <p>&copy; 2025 Software Development Club - Liberty University</p>
     </footer>
 
-    <!-- All JS Content has been moved onto final.js -->
+    <!-- All JS Content (outside of jquery.js) has been moved onto final.js -->
     <script src="final.js"></script>
+
+    <script src="jquery.js"></script>
 </body>
 </html>
