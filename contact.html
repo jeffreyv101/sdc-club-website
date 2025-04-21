@@ -72,40 +72,40 @@
                 <!-- Account Creation Form -->
                 <form onsubmit="createAccount(event)" id="contactform" style="color: #030303;">
                     <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" class="center-text" name="name">
                     <br>
 
                     <p><i>Please enter a username between 6 and 15 characters long, consisting solely of letters and numbers. The username cannot start with a number.</i></p>
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username">
+                    <input type="text" id="username" class="center-text" name="username">
                     <br>
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" class="center-text" name="email">
                     <br>
 
                     <p><i>Please enter a password between 8 and 20 characters long containing at least one uppercase letter, one lowercase letter, one number, and one special character.</i></p>
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password">
+                    <input type="password" id="password" class="center-text" name="password">
                     <br>
 
                     <label for="confirm-password">Confirm Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password">
+                    <input type="password" id="confirm-password" class="center-text" name="confirm-password">
                     <br>
 
                     <p><i>Please enter a phone number in the format: (xxx) xxx-xxxx or xxx-xxx-xxxx or xxxxxxxxxx</i></p>
                     <label for="phone">Phone Number:</label>
-                    <input type="input" id="phone" name="phone">
+                    <input type="input" id="phone" class="center-text" name="phone">
                     <br>
 
                     <p><i>Note: You must be 18 years or older to create an account.</i></p>
                     <label for="date-of-birth">Date of Birth:</label>
-                    <input type="date" id="date-of-birth" name="date-of-birth">
+                    <input type="date" id="date-of-birth" class="center-text" name="date-of-birth">
                     <br>
 
                     <p><i>By checking the box below, you agree to the terms and conditions of the Software Development Club.</i></p>
                     <label for="confirm-agreement">Agree to terms of use</label>
-                    <input type="checkbox" id="confirm-agreement" name="confirm-agreement" value="off" onchange="this.value = this.checked ? 'on' : 'off'">
+                    <input type="checkbox" id="confirm-agreement" class="center-text" name="confirm-agreement" value="off" onchange="this.value = this.checked ? 'on' : 'off'">
                     <br> <br>
 
                     <!-- Button to show terms and conditions -->
@@ -117,7 +117,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="center-text">
         <p>&copy; 2025 Software Development Club - Liberty University</p>
     </footer>
 
