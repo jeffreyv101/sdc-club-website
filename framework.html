@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Club Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-gray-100">
+        <header>
+            <div class="bg-custom-black text-white flex items-center">
+                <img class="w-20 inline-flex" src="./images/logo.png" alt="Software Development Club Logo">
+                <h1 class="inline-flex text-3xl mx-3 font-bold">Software Development Club</h1>
+            </div>
+    
+            <nav class="bg-custom-black text-white flex space-x-2 px-2">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a id="projectTitle" href="projects.html">Current Projects</a>
+                <a href="contact.html ">Contact</a>
+            </nav>
+        </header>
+    
+        <div class="bg-white py-5 px-5 m-5 rounded-2xl shadow-lg">
+            <h2 class="text-center text-2xl font-bold">This is a demonstration of a page written with Tailwind CSS</h2>
+            <p class="text-center py-5">This page has been entriely rewritten with Tailwind CSS!</p>
+            <div class="bg-gradient-to-r from-blue-100 to-blue-800 p-5 rounded-2xl my-4">
+                <h3 class="text-center text-xl font-bold">This is a of a demonstration of a gradient!</h3>
+            </div>
+        </div>
+    
+        <footer class="bg-custom-black text-white text-center py-4">
+            <p>&copy; 2025 Software Development Club - Liberty University</p>
+        </footer>
+    </div>
+    
+    <!-- Tailwind CSS Import -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind CSS configuration change to add in the correct header/footer color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-black': 'rgb(23,23,23)',
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
